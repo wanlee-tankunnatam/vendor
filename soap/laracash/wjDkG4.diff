@@ -1,0 +1,125 @@
+diff --git a/config/laracash.php b/config/laracash.php
+index 035fcd576717d8becb4ce2e0536b0315ee150fce..3ac44ad10138dc9405b86fb2d3b3ddd1f2ed2ec5 100644
+--- a/config/laracash.php
++++ b/config/laracash.php
+@@ -2,4 +2,4 @@
+ 
+ return [
+     //
+-];
+\ No newline at end of file
++];
+diff --git a/src/Billable.php b/src/Billable.php
+index e7cdd3e9a6d748101584f6b57773df3b0613f926..2a66e4f0e158fe03032d4a4eb9ecfbe87851712d 100644
+--- a/src/Billable.php
++++ b/src/Billable.php
+@@ -4,12 +4,11 @@ namespace Soap\Laracash;
+ 
+ use NeptuneSoftware\Invoice\Traits\HasInvoice;
+ 
+-trait Billable 
++trait Billable
+ {
+     use HasInvoice; // enables the ->invoices() Eloquent relationship
+ 
+     public function invoiceFor()
+     {
+-        
+     }
+-}
+\ No newline at end of file
++}
+diff --git a/src/Laracash.php b/src/Laracash.php
+index cf2d6d79dd872e36839ec1886b8cc045ebee01cb..48eab4a9c5c6fc14401edee10acb63a79ab3cfaa 100644
+--- a/src/Laracash.php
++++ b/src/Laracash.php
+@@ -5,4 +5,4 @@ namespace Soap\Laracash;
+ class Laracash
+ {
+     // Build wonderful things
+-}
+\ No newline at end of file
++}
+diff --git a/tests/Feature/BasicTest.php b/tests/Feature/BasicTest.php
+index 8a407766e78aa85336277e1c652859cb03f783bf..d5e3dfc7aefdcaae17bc0b18d7215928ea0eaf62 100644
+--- a/tests/Feature/BasicTest.php
++++ b/tests/Feature/BasicTest.php
+@@ -6,13 +6,13 @@ use Soap\Laracash\Tests\TestCase;
+ 
+ class BasicTest extends TestCase
+ {
+-
+-/**
+-* @test
+-* @return void
+-*/
+-public function it_can_do_basic_thing():void
+-{
+-    $this->assertEquals(1, 1);
++    /**
++     * @test
++     *
++     * @return void
++     */
++    public function it_can_do_basic_thing(): void
++    {
++        $this->assertEquals(1, 1);
++    }
+ }
+-}
+\ No newline at end of file
+diff --git a/tests/TestCase.php b/tests/TestCase.php
+index b6e08be66091b91e830191b92bf3de563e7a9384..6338fde97bc996e822660404c357655c39ac7b79 100644
+--- a/tests/TestCase.php
++++ b/tests/TestCase.php
+@@ -2,22 +2,22 @@
+ 
+ namespace Soap\Laracash\Tests;
+ 
+-
+ class TestCase extends \Orchestra\Testbench\TestCase
+ {
+     /**
+-     * Setup tests
+-     * @return void 
++     * Setup tests.
++     *
++     * @return void
+      */
+     public function setup(): void
+     {
+-        Parent::setup();
++        parent::setup();
+     }
+ 
+     /**
+      * Define environment setup.
+      *
+-     * @param \Illuminate\Foundation\Application $app
++     * @param  \Illuminate\Foundation\Application  $app
+      * @return void
+      */
+     protected function defineEnvironment($app)
+diff --git a/tests/Unit/ExampleTest.php b/tests/Unit/ExampleTest.php
+index 34cc765755d296ef6bb6722ab053290a88c8a85b..dfe86dbe86d11f5e75c1e7ae503f9a5098348d6b 100644
+--- a/tests/Unit/ExampleTest.php
++++ b/tests/Unit/ExampleTest.php
+@@ -6,13 +6,13 @@ use Soap\Laracash\Tests\TestCase;
+ 
+ class ExampleTest extends TestCase
+ {
+-
+     /**
+      * @test
+-     * @return void 
++     *
++     * @return void
+      */
+-    public function it_can_do_something():void
++    public function it_can_do_something(): void
+     {
+         $this->assertEquals(1, 1);
+     }
+-}
+\ No newline at end of file
++}

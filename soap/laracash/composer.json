@@ -1,0 +1,51 @@
+{
+    "name": "soap/laracash",
+    "description": "Laravel package for manage subscription and payment",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Prasit Gebsaap",
+            "email": "prasit.gebsaap@gmail.com",
+            "homepage": "https://www.mycoding.academy"
+        }
+    ],
+    "homepage": "https://github.com/soap/laracash",
+    "keywords": ["Laravel", "Laracash"],
+    "require": {
+        "illuminate/support": "~7|~8",
+        "soap/laravel-invoices": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~5|~6",
+        "squizlabs/php_codesniffer": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Soap\\Laracash\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Soap\\Laracash\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Soap\\Laracash\\LaracashServiceProvider"
+            ],
+            "aliases": {
+                "Laracash": "Soap\\Laracash\\Facades\\Laracash"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

@@ -1,0 +1,2 @@
+# laracash
+Laravel cash collector
